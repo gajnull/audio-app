@@ -1,19 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Home from './Home/Home';
-import Run from './Run/Run';
+import Home from './components/Home/Home';
+import Topic from './components/Topic/Topic';
 //import { Counter } from './features/counter/Counter';
 //import './App.css';
 
-function App() {
+export default function App() {
   const page = useSelector(state => state.pages.current);
 
-  const current = page === 'home' ? <Home /> :
-                  page === 'run' ? <Run /> : <Home />
+  const currentPage = page === 'home' ? <Home /> :
+                  page === 'topic' ? <Topic /> : <Home />
 
 
-  return current;
+  return currentPage;
 }
 
-export default App;
+
